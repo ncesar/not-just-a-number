@@ -8,6 +8,8 @@ Use `npm i`;
 
 Use `npm start`, fetch the QRCode and you are ready to go.
 
+Access here: https://covid.ncesar.com
+
 ## Techs
 
 ReactJS with Typescript
