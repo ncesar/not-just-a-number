@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { HeaderWrapper } from './styled';
+import { CurrentProps } from './types';
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const [confirmed, setConfirmed] = useState(0);
   const [date, setDate] = useState('');
   useEffect(() => {
@@ -13,7 +14,7 @@ export const Header = () => {
       )
       .then((res) => {
         const totalBrazilDeaths = res.data.results.reduce(
-          (prev, curr) => prev + curr.deaths,
+          (prev: string, curr: CurrentProps) => prev + curr.deaths,
           0,
         );
         const date = res.data.results[20].date;

@@ -7,9 +7,10 @@ import {
   PeopleImage,
   Counter,
 } from './styled';
+import { PeopleProps } from './types';
 
-export function People() {
-  const [people, setPeople] = useState([]);
+export const People: React.FC = () => {
+  const [people, setPeople] = useState<PeopleProps[]>([]);
   const [page, setPage] = useState(0);
 
   const fetchPeopleImages = () => {
@@ -32,7 +33,9 @@ export function People() {
   const removedDuplicatedPeople = people.filter(
     (ele, ind) =>
       ind ===
-      people.findIndex((elem) => elem.picture.medium === ele.picture.medium),
+      people.findIndex(
+        (elem): boolean => elem.picture.large === ele.picture.large,
+      ),
   );
 
   return (
@@ -48,7 +51,7 @@ export function People() {
           </p>
         }
       >
-        {/* small workaround to try to remove repeated people since randomuser api can provide repeated images :( */}
+        {/* small workaround to try to remove repeated people since randomuser api provide repeated images :( */}
         {people.length < 190
           ? removedDuplicatedPeople.map((people, i) => (
               <PeopleImageWrapper key={i}>
@@ -70,4 +73,4 @@ export function People() {
       <Counter>{`${people.length.toLocaleString()} pessoas`}</Counter>
     </PeopleWrapper>
   );
-}
+};

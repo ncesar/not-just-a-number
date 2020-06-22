@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AboutWrapper } from './styled';
 
-export const About = () => {
+export const About: React.FC = () => {
   return (
     <AboutWrapper>
       <Link to="/">Voltar a página inicial</Link>
