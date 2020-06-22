@@ -43,7 +43,7 @@ export const People: React.FC = () => {
       <InfiniteScroll
         dataLength={people.length}
         next={() => fetchPeopleImages()}
-        hasMore={people.length < 300 && true}
+        hasMore={people.length < 15500 && true}
         loader={<h4>Carregando...</h4>}
         endMessage={
           <p style={{ textAlign: 'center', paddingBottom: 50 }}>
@@ -61,7 +61,6 @@ export const People: React.FC = () => {
                   src={people.picture.large}
                   alt="Imagem de uma pessoa"
                 />
-                oi
               </PeopleImageWrapper>
             ))
           : people.map((people, i) => (
