@@ -21,6 +21,9 @@ export const Header: React.FC = () => {
         const objDate = new Date(date);
         setConfirmed(totalBrazilDeaths);
         setDate(objDate.toLocaleDateString());
+      })
+      .catch((error) => {
+        setConfirmed(50000);
       });
   }, []);
   return (
