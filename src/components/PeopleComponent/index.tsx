@@ -43,22 +43,25 @@ export const People: React.FC = () => {
       <InfiniteScroll
         dataLength={people.length}
         next={() => fetchPeopleImages()}
-        hasMore={true}
+        hasMore={people.length < 300 && true}
         loader={<h4>Carregando...</h4>}
         endMessage={
-          <p style={{ textAlign: 'center' }}>
-            <b>Yay! You have seen it all</b>
+          <p style={{ textAlign: 'center', paddingBottom: 50 }}>
+            Pois é, em alguns minutos foram mais de 15000 pessoas. 15000
+            famílias afetadas, 15000 sonhos interrompidos e{' '}
+            <strong>não são apenas números</strong>, são muito mais que isso!
           </p>
         }
       >
         {/* small workaround to try to remove repeated people since randomuser api provide repeated images :( */}
-        {people.length < 190
+        {people.length < 200
           ? removedDuplicatedPeople.map((people, i) => (
               <PeopleImageWrapper key={i}>
                 <PeopleImage
                   src={people.picture.large}
                   alt="Imagem de uma pessoa"
                 />
+                oi
               </PeopleImageWrapper>
             ))
           : people.map((people, i) => (
