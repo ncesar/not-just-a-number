@@ -105,6 +105,16 @@ export const About: React.FC = () => {
           ncesar.com
         </a>
       </p>
+      <p>
+        Este projeto é open-source, contribua ou explore o código em:{' '}
+        <a
+          href="https://github.com/ncesar/not-just-a-number"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          github.com/ncesar/not-just-a-number
+        </a>
+      </p>
     </AboutWrapper>
   );
 };
