@@ -6,7 +6,7 @@ This was a project created to the Brazilian people to try to alert and raise the
 
 Use `npm i`;
 
-Use `npm start`, fetch the QRCode and you are ready to go.
+Use `npm start`
 
 Access here: https://covid.ncesar.com
 
