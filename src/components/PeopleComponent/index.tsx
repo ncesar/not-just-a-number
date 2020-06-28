@@ -28,7 +28,7 @@ export const People: React.FC = () => {
           setPeople([...people, ...result]);
           setPage((prev) => prev + 1);
         });
-    }, 500);
+    }, 400);
   };
 
   const handleScroll = () => {
@@ -75,7 +75,7 @@ export const People: React.FC = () => {
           </p>
         }
       >
-        {/* small workaround to try to remove repeated people since randomuser api provide repeated images :( */}
+        {/* small workaround to try to remove the first repeated people since randomuser api provide repeated images :( */}
         <PeopleContentWrapper ref={wrapper}>
           {removedDuplicatedPeople.length < 180
             ? removedDuplicatedPeople.map((people, i) => (
