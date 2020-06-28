@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
-export const PeopleWrapper = styled.div`
-  .infinite-scroll-component__outerdiv {
-  }
-  .infinite-scroll-component {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+export const PeopleWrapper = styled.div``;
+export const PeopleContentWrapper = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 export const PeopleImageWrapper = styled.div`
   display: flex;
