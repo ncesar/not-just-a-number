@@ -4,7 +4,18 @@ import { Link } from 'react-router-dom';
 import { HeaderWrapper, TextWrapper } from './styled';
 import { CurrentProps } from './types';
 
+import whyDidYouRender from '@welldone-software/why-did-you-render';
+
+whyDidYouRender(React, {
+  onlyLogs: true,
+  titleColor: 'green',
+  diffNameColor: 'darkturquoise',
+});
+
 export const Header: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [triggerRerender, setTriggerRerender] = useState({ foo: true });
+
   const [confirmed, setConfirmed] = useState(0);
   const [date, setDate] = useState('');
   useEffect(() => {
@@ -28,7 +39,14 @@ export const Header: React.FC = () => {
   }, []);
   return (
     <HeaderWrapper>
-      <h1>Não são apenas números</h1>
+      <h1>Actual value: {triggerRerender.foo.toString()}</h1>
+      <button
+        onClick={() => setTriggerRerender({ foo: true })}
+        style={{ position: 'relative', zIndex: 9999 }}
+      >
+        Trigger unecessary re-render
+      </button>
+      <h4>Não são apenas números</h4>
       <TextWrapper>
         <p>
           O COVID-19 já matou mais de{' '}
@@ -75,3 +93,5 @@ export const Header: React.FC = () => {
     </HeaderWrapper>
   );
 };
+
+Header.whyDidYouRender = true;
