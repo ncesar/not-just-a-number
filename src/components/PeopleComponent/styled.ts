@@ -32,3 +32,9 @@ export const Counter = styled.div`
   font-size: 25px;
   box-shadow: 0 0px 10px #000000ad;
 `;
+export const LoadingWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px;
+`;

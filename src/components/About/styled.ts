@@ -5,8 +5,9 @@ export const AboutWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding: 10px 30px;
   @media (min-width: 600px) {
-    padding: 10px;
+    padding: 10px 100px;
   }
   h1 {
     font-size: 30px;
@@ -16,4 +17,10 @@ export const AboutWrapper = styled.div`
       font-size: 50px;
     }
   }
+`;
+export const TextWrapper = styled.div`
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
 `;

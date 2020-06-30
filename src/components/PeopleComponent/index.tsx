@@ -7,6 +7,7 @@ import {
   PeopleImage,
   Counter,
   PeopleContentWrapper,
+  LoadingWrapper,
 } from './styled';
 import { PeopleProps } from './types';
 
@@ -21,7 +22,7 @@ export const People: React.FC = () => {
     setTimeout(() => {
       axios
         .get(
-          `https://randomuser.me/api/?inc=picture&results=57&page=${page}&seed=d`,
+          `https://randomuser.me/api/?inc=picture&results=150&page=${page}&seed=d`,
         )
         .then((res) => {
           const result = res.data.results;
@@ -66,7 +67,11 @@ export const People: React.FC = () => {
         next={() => fetchPeopleImages()}
         onScroll={() => handleScroll()}
         hasMore={people.length < 15500 && true}
-        loader={<h4>Carregando...</h4>}
+        loader={
+          <LoadingWrapper>
+            <h4>Carregando...</h4>
+          </LoadingWrapper>
+        }
         endMessage={
           <p style={{ textAlign: 'center', paddingBottom: 50 }}>
             Pois é, em alguns minutos foram mais de 15000 pessoas. 15000
