@@ -6,6 +6,10 @@ export const PeopleContentWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 10px 30px;
+  @media (min-width: 600px) {
+    padding: 10px 100px;
+  }
 `;
 export const PeopleImageWrapper = styled.div`
   display: flex;
