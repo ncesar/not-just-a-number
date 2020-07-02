@@ -66,7 +66,7 @@ export const People: React.FC = () => {
         dataLength={people.length}
         next={() => fetchPeopleImages()}
         onScroll={() => handleScroll()}
-        hasMore={people.length < 15500 && true}
+        hasMore={people.length < 60000 && true}
         loader={
           <LoadingWrapper>
             <h4>Carregando...</h4>
@@ -74,8 +74,8 @@ export const People: React.FC = () => {
         }
         endMessage={
           <p style={{ textAlign: 'center', paddingBottom: 50 }}>
-            Pois é, em alguns minutos foram mais de 15000 pessoas. 15000
-            famílias afetadas, 15000 sonhos interrompidos e{' '}
+            Pois é, em alguns minutos foram mais de 60000 pessoas. 60000
+            famílias afetadas, 60000 sonhos interrompidos e{' '}
             <strong>não são apenas números</strong>, eram vidas!
           </p>
         }
